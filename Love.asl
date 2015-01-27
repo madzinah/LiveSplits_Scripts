@@ -10,12 +10,12 @@ start
 
 split
 {
-	return old.LevelID != current.LevelID;
+	return old.LevelID == current.LevelID - 1;
 }
 
 reset
 {
-	return current.LevelID == 3;
+	return current.LevelID == 3 || current.LevelID == 2;
 }
 
 isLoading
