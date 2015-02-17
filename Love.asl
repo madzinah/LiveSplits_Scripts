@@ -1,6 +1,7 @@
 state("Love-Steam")
-{
-	int LevelID : "Love-Steam.exe", 0x3C8BF8;
+{	
+	// Going from 5 for level 1 to 22 for the score screen
+	int LevelID : "Love-Steam.exe", 0x506F58;
 }
 
 start
@@ -10,7 +11,7 @@ start
 
 split
 {
-	return old.LevelID == current.LevelID - 1;
+	return current.LevelID == old.LevelID + 1;
 }
 
 reset
